@@ -1,0 +1,39 @@
+<?php /** @var \Hostinghelden\CategoryIcon\Block\Topmenu $block */ ?>
+<nav id="mainmenu">
+  <ul class="level0">
+  <?php foreach($block->getMenu() as $item) { ?>
+    <li>
+    <?php if ($item["icon"]): ?>
+      <span class="icon"><img src="<?php echo $item['icon'] ?>" alt=""></span>
+    <?php endif ?>
+    <a class="<?php echo $item["class"] ?>" href="<?php echo $item["link"] ?>"><?php echo $item["name"] ?></a>
+      <?php if ($item["children"]): ?>
+      <ul class="childs level1">
+      <?php foreach($item["children"] as $child){ ?>
+        <li>
+        <?php if ($child["icon"]): ?>
+          <span class="icon"><img src="<?php echo $child['icon'] ?>" alt=""></span>
+        <?php endif ?>
+          <a class="<?php echo $child["class"] ?>" href="<?php echo $child["link"] ?>"><?php echo $child["name"] ?></a>
+          <?php if ($child["children"]): ?>
+          <ul class="childs level2">
+          <?php foreach($child["children"] as $childchild){ ?>
+            <li>
+            <?php if ($childchild["icon"]): ?>
+              <span class="icon"><img src="<?php echo $childchild['icon'] ?>" alt=""></span>
+            <?php endif ?>
+              <a class="<?php echo $childchild["class"] ?>" href="<?php echo $childchild["link"] ?>"><?php echo $childchild["name"] ?></a>
+            </li>
+          <?php } ?>
+          </ul>
+          <?php endif ?>
+        </li>
+      <?php } ?>
+      </ul>
+      <?php endif ?>
+    </li>
+<?php
+}
+?>
+</ul>
+</nav>

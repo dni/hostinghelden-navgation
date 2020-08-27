@@ -1,0 +1,23 @@
+{
+    "name": "hostinghelden/hostinghelden-navigation",
+    "description": "adds custom topmenu with category icon",
+    "require": {
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "extra": {
+        "map": [
+            [
+                "*",
+                "Hostinghelden/Navigation"
+            ]
+        ]
+    },
+    "authors": [
+        {
+            "name": "Daniel Krahofer",
+            "homepage": "https://www.hostinghelden.at/",
+            "role": "Developer"
+        }
+    ]
+}
